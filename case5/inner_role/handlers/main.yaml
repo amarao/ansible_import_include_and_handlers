@@ -1,0 +1,4 @@
+---
+- name: handler
+  debug: msg="handler for inner role"
+  changed_when: True
