@@ -1,0 +1,4 @@
+---
+- debug: msg="Action in inner role"
+  changed_when: True
+  notify: handler
