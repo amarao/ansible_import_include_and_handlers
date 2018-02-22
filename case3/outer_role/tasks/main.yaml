@@ -1,0 +1,6 @@
+---
+- debug: msg="action in outer role"
+  changed_when: True
+  notify: handler
+- include_role:
+    name: inner_role
