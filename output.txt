@@ -1,0 +1,472 @@
+
+
+##################################################
+# Test Case: 1
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [include_role : inner_role] ***********************************************
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [inner_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for inner role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 2
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+TASK [include_role : inner_role] ***********************************************
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 3
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+TASK [include_role : inner_role] ***********************************************
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+RUNNING HANDLER [inner_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for inner role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 4
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 5
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 6
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 7
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [include_role : inner_role] ***********************************************
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [inner_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for inner role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 8
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+ERROR! The requested handler 'handler' was not found in either the main handlers list nor in the listening handlers list
+
+
+
+##################################################
+# Test Case: 9
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+ERROR! The requested handler 'handler' was not found in either the main handlers list nor in the listening handlers list
+
+
+
+##################################################
+# Test Case: 10
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [inner_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for inner role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 11
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+RUNNING HANDLER [inner_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for inner role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 12
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [inner_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for inner role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 13
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [include_role : inner_role] ***********************************************
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 14
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+TASK [include_role : inner_role] ***********************************************
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 15
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+TASK [include_role : inner_role] ***********************************************
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 16
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 17
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+
+
+##################################################
+# Test Case: 18
+##################################################
+
+
+PLAY [all] *********************************************************************
+
+TASK [include_role : outer_role] ***********************************************
+
+TASK [outer_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "action in outer role"
+}
+
+TASK [inner_role : debug] ******************************************************
+changed: [localhost] => {
+    "msg": "Action in inner role"
+}
+
+RUNNING HANDLER [outer_role : handler] *****************************************
+changed: [localhost] => {
+    "msg": "handler for outer role"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
