@@ -9,11 +9,18 @@ To run each case, go to caseN directory and run `ansible-playbook -i localhost, 
 
 <br>
 
-### Using `test.sh`
+### Using `test.sh` script
 
 ```shell
 ./test.sh &> output.txt
 ```
+<br>
+
+### Read Output
+
+read -> [Output.txt](output.txt)
+
+<br>
 
 ### test result
 
